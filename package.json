@@ -1,0 +1,19 @@
+{
+  "name": "banabaconnect",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "mobile": "npm run start --workspace @banabaconnect/mobile",
+    "web": "npm run dev --workspace @banabaconnect/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test:status": "node --test scripts/test-report-status.cjs"
+  },
+  "overrides": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  }
+}

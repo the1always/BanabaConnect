@@ -1,0 +1,123 @@
+{
+  "expo": {
+    "name": "BanabaConnect",
+    "slug": "banabaconnect",
+    "version": "1.0.9",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ph.banabaconnect.app"
+    },
+    "android": {
+      "package": "ph.banabaconnect.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "./plugins/withWindowsCxxCompiler",
+      "expo-router",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain"
+        }
+      ],
+      "expo-sqlite",
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "BanabaConnect uses the camera to take a photo of an incident or of your Barangay ID.",
+          "photosPermission": "BanabaConnect uses your photos so you can attach a picture of an incident or of your Barangay ID.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "BanabaConnect uses your location while you make a report, so responders know where to go.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false
+        }
+      ],
+      "expo-background-task",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "BanabaConnect uses Face ID to confirm it's you before sending an SOS to Barangay Banaba."
+        }
+      ],
+      [
+        "expo-quick-actions",
+        {
+          "androidIcons": {
+            "shortcut_sos": {
+              "foregroundImage": "./assets/android-icon-foreground.png",
+              "backgroundColor": "#C2342E"
+            }
+          },
+          "iosActions": [
+            {
+              "id": "sos",
+              "title": "Send SOS",
+              "subtitle": "Barangay Banaba",
+              "icon": "symbol:sos.circle.fill",
+              "params": { "href": "/sos" }
+            }
+          ]
+        }
+      ],
+      [
+        "expo-widgets",
+        {
+          "widgets": [
+            {
+              "name": "SosWidget",
+              "displayName": "SOS",
+              "description": "Send an SOS to Barangay Banaba in one tap.",
+              "ios": {
+                "supportedFamilies": ["systemSmall", "accessoryCircular"]
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "SosWidget",
+              "label": "BanabaConnect SOS",
+              "description": "Send an SOS to Barangay Banaba in one tap.",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "resizeMode": "horizontal|vertical"
+            }
+          ]
+        }
+      ]
+    ],
+    "scheme": "banabaconnect",
+    "owner": "jbialen",
+    "extra": {
+      "eas": { "projectId": "4f915da0-3520-48c5-a3ef-504ee06f906a" }
+    }
+  }
+}
